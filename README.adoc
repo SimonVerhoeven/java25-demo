@@ -5,6 +5,12 @@
 
 Java 25 will be released in September 2025, as it's still early days the full list of enhancements isn't known yet, but we can already take a sneak peek.
 
+== Targeted
+
+=== https://openjdk.org/jeps/502[JEP-502: Stable Values (Preview)]
+
+This API will bring us immutable value holders that are at most initialized once as it will help us move towards deferred immutability through `StableValue` and `StableSupplier`.
+
 == Core
 
 == HotSpot
@@ -24,7 +30,6 @@ As planned after the deprecation for removal in JDK 24 (JEP 501) the 32 bit X86 
 Intro for general.
 
 Additions:
-
 
 Removals:
 
