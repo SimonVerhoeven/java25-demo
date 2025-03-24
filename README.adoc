@@ -3,11 +3,15 @@
 :toc-placement:
 :toclevels: 3
 
-Java 25 will be released in September 2025, as it's still early days the full list of enhancements isn't known yet, but we can already take a sneak peak.
+Java 25 will be released in September 2025, as it's still early days the full list of enhancements isn't known yet, but we can already take a sneak peek.
 
 == Core
 
 == HotSpot
+
+=== https://openjdk.org/jeps/501[JEP 503: Remove the 32-bit x86 Port]
+
+As planned after the deprecation for removal in JDK 24 (JEP 501) the 32 bit X86 bit source code and build support has been removed.
 
 == Language specification
 
