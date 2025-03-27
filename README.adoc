@@ -13,6 +13,18 @@ This API will bring us immutable value holders that are at most initialized once
 
 == Core
 
+=== https://openjdk.org/jeps/8340343[JEP Draft 8340343: Structured Concurrency (Fifth Preview)]
+
+This proposal aims to address some of the frequently encountered challenges in concurrent programming by introducing an API that treats groups of related tasks running in different threads as a single unit of work.
+
+The proposed approach, also known as structured concurrency will help us streamline error handling, cancellation, and observability, making concurrent code more reliable and easier to manage.
+
+The main target is promoting a style of concurrent programming that eliminates common risks such as thread leaks and cancellation delays, while also improving the observability of concurrent code. The API itself is centered around `StructuredTaskScope`, which allows us to define a clear hierarchy of tasks and subtasks, ensuring that all subtasks are completed or cancelled before the parent task exits. This enforces a structured flow of execution, similar to single-threaded code, where subtasks are confined to the lexical scope of their parent task. The API also provides built-in shutdown policies (e.g., `ShutdownOnFailure` and `ShutdownOnSuccess`) to handle common concurrency patterns, such as cancelling all subtasks if one fails or succeeds. We can also define our own shutdown policies.
+
+By reifying the task-subtask relationship at runtime, structured concurrency makes it easier for us to reason about and debug concurrent programs. It also integrates well with observability tools, such as thread dumps, which can now display the hierarchical structure of tasks and subtasks.
+
+This enhancement does not aim to replace existing concurrency constructs like `ExecutorService` or `Future`, but rather to complement them by offering a more structured and reliable alternative for managing concurrent tasks.
+
 == HotSpot
 
 === https://openjdk.org/jeps/501[JEP 503: Remove the 32-bit x86 Port]
