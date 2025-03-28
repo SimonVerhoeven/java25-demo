@@ -27,7 +27,7 @@ This enhancement does not aim to replace existing concurrency constructs like `E
 
 == HotSpot
 
-=== https://openjdk.org/jeps/501[JEP 503: Remove the 32-bit x86 Port]
+=== https://openjdk.org/jeps/503[JEP 503: Remove the 32-bit x86 Port]
 
 As planned after the deprecation for removal in JDK 24 (JEP 501) the 32 bit X86 bit source code and build support has been removed.
 
