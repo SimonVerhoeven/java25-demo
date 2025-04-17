@@ -47,6 +47,8 @@ Removals:
 
 Deprecations:
 
+* https://openjdk.org/jeps/8353120[JDK-8353120 Deprecate the use of `java.locale.useOldISOCodes` system property] - this property was used to support legacy codes, and is now being deprecated to to simplify the codebase and reduce maintenance overhead after its removal in a future release.
+
 Issues:
 
 == Thoughts
