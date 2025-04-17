@@ -11,6 +11,12 @@ Java 25 will be released in September 2025, as it's still early days the full li
 
 This API will bring us immutable value holders that are at most initialized once as it will help us move towards deferred immutability through `StableValue` and `StableSupplier`.
 
+== Candidate
+
+=== https://openjdk.org/jeps/198[JEP 198: Light-Weight JSON API]
+
+This would add a light-weight API to consume and generate JSON documents and data streams to meet basics parsing needs, and to leverage Java 8/9 features. The initial goal's not to support JAXB style type-safe data bindings, or offer an event mutation/replacement API.
+
 == Core
 
 === https://openjdk.org/jeps/8340343[JEP Draft 8340343: Structured Concurrency (Fifth Preview)]
