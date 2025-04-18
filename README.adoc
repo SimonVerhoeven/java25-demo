@@ -54,6 +54,10 @@ Given that the Security Manager is no longer used in JFR a public constructor an
 
 == Language specification
 
+=== https://openjdk.org/jeps/507[JEP 507: Primitive Types in Patterns, instanceof, and switch (Third Preview)]
+
+This JEP first introduced as 455 returns without any changes. It aims to enhance pattern matching by allowing primitives in all pattern contexts, and allowing one to use them with instanceof and switch as well.
+
 == Security
 
 == Tools
