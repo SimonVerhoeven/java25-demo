@@ -44,6 +44,10 @@ This enhancement does not aim to replace existing concurrency constructs like `E
 
 As planned after the deprecation for removal in JDK 24 (JEP 501) the 32 bit X86 bit source code and build support has been removed.
 
+=== https://openjdk.org/jeps/509[JEP 509: JFR CPU-Time Profiling (Experimental)]
+
+This experimental feature enhances the https://dev.java/learn/jvm/jfr/[JDK Flight Recorder] with the capacity to capture CPU-time profiling information on Linux.
+
 === https://bugs.openjdk.org/browse/JDK-8353484[JDK-8353484: Simplified EventConfiguration]
 
 Given that the Security Manager is no longer used in JFR a public constructor and a record class has been added for an event configuration object. This avoid reflection and slightly reduces overhead.
