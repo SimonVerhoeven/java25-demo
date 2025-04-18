@@ -19,6 +19,13 @@ This would add a light-weight API to consume and generate JSON documents and dat
 
 == Core
 
+=== https://openjdk.org/jeps/506[JEP 506: Scoped values]
+
+Scoped values are being introduced as a preview API for the fourth time.
+It will enable methods to share immutable data both within threads and with child threads, offering better efficiency and clarity than thread-local variables, especially when used with virtual threads and structured concurrency.
+
+The fourth iteration mostly remains the same, the only changes is the removal of `callWhere()` and `runWhere()` from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.html[ScopedValue] thus leaving us with a fluent API. After this change we can only use bound scopes values through the `call()` and `run()` methods from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.Carrier.html[ScopedValue.Carrier].
+
 === https://openjdk.org/jeps/8340343[JEP Draft 8340343: Structured Concurrency (Fifth Preview)]
 
 This proposal aims to address some of the frequently encountered challenges in concurrent programming by introducing an API that treats groups of related tasks running in different threads as a single unit of work.
