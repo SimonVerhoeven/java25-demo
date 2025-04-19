@@ -50,7 +50,7 @@ This experimental feature enhances the https://dev.java/learn/jvm/jfr/[JDK Fligh
 
 === https://bugs.openjdk.org/browse/JDK-8353484[JDK-8353484: Simplified EventConfiguration]
 
-Given that the Security Manager is no longer used in JFR a public constructor and a record class has been added for an event configuration object. This avoid reflection and slightly reduces overhead.
+Given that the Security Manager is no longer used in JFR a public constructor and a record class has been added for an event configuration object. This change helps avoid reflection and slightly reduces overhead.
 
 == Language specification
 
