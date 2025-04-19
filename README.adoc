@@ -52,6 +52,10 @@ This experimental feature enhances the https://dev.java/learn/jvm/jfr/[JDK Fligh
 
 Given that the Security Manager is no longer used in JFR a public constructor and a record class has been added for an event configuration object. This change helps avoid reflection and slightly reduces overhead.
 
+=== https://bugs.openjdk.org/browse/JDK-8353614[JDK-8353614: JFR print --exac]
+
+This new command-line flag will ensure that events are output in a human-readable format, while numbers, durations and timestamps will be output with full precision. This flag will enhance reporting without the noise from `--json`.
+
 == Language specification
 
 === https://openjdk.org/jeps/507[JEP 507: Primitive Types in Patterns, instanceof, and switch (Third Preview)]
