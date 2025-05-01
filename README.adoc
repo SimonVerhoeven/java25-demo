@@ -62,6 +62,12 @@ This new command-line flag will ensure that events are output in a human-readabl
 
 This JEP first introduced as 455 returns without any changes. It aims to enhance pattern matching by allowing primitives in all pattern contexts, and allowing one to use them with instanceof and switch as well.
 
+=== https://openjdk.org/jeps/511[JEP 511: Module Import Declarations]
+
+This will allow us to easily import all packages exported by a module, this facilitates the reuse of modular libraries without requiring the importing code to be within a module itself. It will also allow beginners to more easily use third-party libraries and core Java classes without needing to know their exact location within the package hierarchy.
+
+For example: `import module java.base;`.
+
 === https://openjdk.org/jeps/512[JEP 512: Compact Source Files and Instance Main Methods]
 
 This enhancement will enable simplified programs by allowing them to be defined in an implicit class and an instance method `void main()`.
