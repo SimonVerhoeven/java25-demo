@@ -3,7 +3,7 @@ package dev.simonverhoeven.java25demo.preview;
 import java.util.concurrent.StructuredTaskScope;
 import java.util.function.Supplier;
 
-/// JEP 8340343: Structured Concurrency (Fifth Preview)
+/// JEP 505: Structured Concurrency (Fifth Preview)
 
 public class StructuredConcurrency {
 
