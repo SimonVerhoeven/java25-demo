@@ -93,6 +93,12 @@ This proposed Java language feature allows statements before explicit constructo
 
 == Security
 
+=== https://openjdk.org/jeps/510[JEP 510: Key Derivation Function API]
+
+This enhancement introduces an API to derive additional keys from a secret key and other data through cryptographic algorithms as Key Derivation Functions (KDFs).
+
+KDF is part of the cryptographic standard  https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.1/os/pkcs11-spec-v3.1-os.html[PKCS #11], and are one of the key elements needed to implement Hybrid Public Key Encryption (HPKE). HPKE is a post-quantum cryptographic algorithm designed to be resistant to quantum computers.
+
 == Tools
 
 == General
