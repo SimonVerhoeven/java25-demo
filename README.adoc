@@ -5,6 +5,21 @@
 
 Java 25 will be released in September 2025, as it's still early days the full list of enhancements isn't known yet, but we can already take a sneak peek.
 
+== Incubator
+
+=== Core
+
+=== https://openjdk.org/jeps/508[JEP 508 Vector API - Tenth incubation]
+
+The tenth iteration API of an API for vector computations. It aims to be a way to express these in a manner that compiles reliably to optimal vector instructions on supported CPU architectures to achieve better performance than equivalent scalar computations.
+
+Compared to https://openjdk.org/jeps/489[JEP 489: Vector API (Ninth Incubator)] there are no API changes.
+
+Two important changes are the increased usage of auto-vectorization on supporting x64 CPUs and now leveraging the foreign function and memory API to link native mathematical-function libraries.
+
+The developers have confirmed that the API will remain in incubation until project Valhalla enters preview itself so that the API can leverage the expected performance and in-memory representation enhancements.
+
+
 == Targeted
 
 === https://openjdk.org/jeps/502[JEP-502: Stable Values (Preview)]
