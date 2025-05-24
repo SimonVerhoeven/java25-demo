@@ -129,3 +129,13 @@ Some useful resources to dive deeper into the Java ecosystem, and stay up-to-dat
 * https://sdkman.io/[SDKman!] - a great tool to manage the installation of various tools and languages
 * https://inside.java/[Inside Java] - News updates by Java team members at Oracle
 * https://www.jcp.org/[Java Community Process] - the place where people can propose, discuss, and approve new features through a Java Specification Request (JSR)
+
+== TODO
+
+JEP 470: PEM Encodings of Cryptographic Objects (Preview)
+JEP 518: JFR Cooperative Sampling
+JEP 520: JFR Method Timing & Tracing
+JEP 521: Generational Shenandoah
+JEP 514: Ahead-of-Time Command-Line Ergonomics
+JEP 515: Ahead-of-Time Method Profiling
+JEP 519: Compact Object Headers
