@@ -97,7 +97,7 @@ This proposed Java language feature allows statements before explicit constructo
 
 This enhancement introduces an API to derive additional keys from a secret key and other data through cryptographic algorithms as Key Derivation Functions (KDFs).
 
-KDF is part of the cryptographic standard  https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.1/os/pkcs11-spec-v3.1-os.html[PKCS #11], and are one of the key elements needed to implement Hybrid Public Key Encryption (HPKE). HPKE is a post-quantum cryptographic algorithm designed to be resistant to quantum computers.
+KDF is part of the cryptographic standard  https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.1/os/pkcs11-spec-v3.1-os.html[PKCS #11] and is one of the key elements needed to implement Hybrid Public Key Encryption (HPKE). HPKE is a post-quantum cryptographic algorithm designed to be resistant to quantum computers.
 
 == Tools
 
@@ -111,7 +111,7 @@ Removals:
 
 Deprecations:
 
-* https://openjdk.org/jeps/8353120[JDK-8353120 Deprecate the use of `java.locale.useOldISOCodes` system property] - this property was used to support legacy codes, and is now being deprecated to to simplify the codebase and reduce maintenance overhead after its removal in a future release.
+* https://openjdk.org/jeps/8353120[JDK-8353120 Deprecate the use of `java.locale.useOldISOCodes` system property] - this property was used to support legacy codes, and is now being deprecated to simplify the codebase and reduce maintenance overhead after its removal in a future release.
 
 Issues:
 
@@ -121,7 +121,7 @@ Issues:
 
 == Resources
 
-Some useful resources to dive deeper into the Java ecosystem, and stay up-to-date are:
+Some useful resources to dive deeper into the Java ecosystem, and stay up to date are:
 
 * https://jdk.java.net/25/release-notes[The release notes] - The official source for all changes, including new features, bug fixes, and deprecations
 * https://javaalmanac.io/jdk/25/[The Java version almanac] - A great resource with details on distributions, and API differences between various releases
@@ -132,10 +132,10 @@ Some useful resources to dive deeper into the Java ecosystem, and stay up-to-dat
 
 == TODO
 
-JEP 470: PEM Encodings of Cryptographic Objects (Preview)
-JEP 518: JFR Cooperative Sampling
-JEP 520: JFR Method Timing & Tracing
-JEP 521: Generational Shenandoah
-JEP 514: Ahead-of-Time Command-Line Ergonomics
-JEP 515: Ahead-of-Time Method Profiling
-JEP 519: Compact Object Headers
+* https://openjdk.org/jeps/470[JEP 470: PEM Encodings of Cryptographic Objects (Preview)]
+* https://openjdk.org/jeps/518[JEP 518: JFR Cooperative Sampling]
+* https://openjdk.org/jeps/520[JEP 520: JFR Method Timing & Tracing]
+* https://openjdk.org/jeps/521[JEP 521: Generational Shenandoah]
+* https://openjdk.org/jeps/514[JEP 514: Ahead-of-Time Command-Line Ergonomics]
+* https://openjdk.org/jeps/515[JEP 515: Ahead-of-Time Method Profiling]
+* https://openjdk.org/jeps/519[JEP 519: Compact Object Headers]
