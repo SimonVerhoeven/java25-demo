@@ -69,7 +69,7 @@ Given that the Security Manager is no longer used in JFR a public constructor an
 
 === https://bugs.openjdk.org/browse/JDK-8353614[JDK-8353614: JFR print --exac]
 
-This new command-line flag will ensure that events are output in a human-readable format, while numbers, durations and timestamps will be output with full precision. This flag will enhance reporting without the noise from `--json`.
+This new command-line flag will ensure that events are output in a human-readable format, while numbers, durations, and timestamps will be output with full precision. This flag will enhance reporting without the noise from `--json`.
 
 == Language specification
 
