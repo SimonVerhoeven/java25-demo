@@ -63,6 +63,11 @@ As planned after the deprecation for removal in JDK 24 (JEP 501) the 32 bit X86 
 
 This experimental feature enhances the https://dev.java/learn/jvm/jfr/[JDK Flight Recorder] with the capacity to capture CPU-time profiling information on Linux.
 
+=== https://openjdk.org/jeps/521[JEP 521: Generational Shenandoah]
+
+This proposal will promote the generational mode of the Shenandoah garbage collector from experimental to a production feature. The default of single generation will remain tough.
+
+
 === https://bugs.openjdk.org/browse/JDK-8353484[JDK-8353484: Simplified EventConfiguration]
 
 Given that the Security Manager is no longer used in JFR a public constructor and a record class has been added for an event configuration object. This change helps avoid reflection and slightly reduces overhead.
@@ -135,7 +140,6 @@ Some useful resources to dive deeper into the Java ecosystem, and stay up to dat
 * https://openjdk.org/jeps/470[JEP 470: PEM Encodings of Cryptographic Objects (Preview)]
 * https://openjdk.org/jeps/518[JEP 518: JFR Cooperative Sampling]
 * https://openjdk.org/jeps/520[JEP 520: JFR Method Timing & Tracing]
-* https://openjdk.org/jeps/521[JEP 521: Generational Shenandoah]
 * https://openjdk.org/jeps/514[JEP 514: Ahead-of-Time Command-Line Ergonomics]
 * https://openjdk.org/jeps/515[JEP 515: Ahead-of-Time Method Profiling]
 * https://openjdk.org/jeps/519[JEP 519: Compact Object Headers]
