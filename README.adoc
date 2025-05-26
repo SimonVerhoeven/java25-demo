@@ -102,7 +102,7 @@ This enhancement will enable simplified programs by allowing them to be defined 
 
 === https://openjdk.org/jeps/513[JEP 513: Flexible Constructor Bodies]
 
-This proposed Java language feature allows statements before explicit constructor invocations, enabling more natural field initialization. As a preview feature in JDK 22 and 23, it introduces two constructor phases: a prologue and epilogue respectively to help developers place initialization logic more intuitively while preserving existing instantiation safeguards. This proposal has not changed compared to the second preview.
+This Java language feature allows statements before explicit constructor invocations, enabling more natural field initialization. As a preview feature in JDK 22 and 23, it introduces two constructor phases: a prologue and epilogue respectively to help developers place initialization logic more intuitively while preserving existing instantiation safeguards. This proposal has not changed compared to the second preview.
 
 == Security
 
