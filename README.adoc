@@ -63,6 +63,10 @@ As planned after the deprecation for removal in JDK 24 (JEP 501) the 32 bit X86 
 
 This experimental feature enhances the https://dev.java/learn/jvm/jfr/[JDK Flight Recorder] with the capacity to capture CPU-time profiling information on Linux.
 
+=== https://openjdk.org/jeps/514[JEP 514: Ahead-of-Time Command-Line Ergonomics]
+
+This enhancement simplifies the creation of ahead-of-time (AOT) caches to speed up Java application startup by introducing a new `-XX:AOTCacheOutput` option, which consolidates the previous two-step process (recording a training run and then generating the cache) into a single command. The JVM now automatically handles the intermediate AOT configuration file as a temporary file, removing cleanup overhead, while still supporting explicit two-step workflows for advanced use cases like distributed training and cache generation. A new J`DK_AOT_VM_OPTIONS` environment variable allows separate tuning for cache creation without affecting the training run, maintaining flexibility for future AOT optimizations under Project Leyden. The change prioritizes usability for common scenarios without removing the ability to manually control the process when needed, such as when optimizing cache generation across different hardware environments.
+
 === https://openjdk.org/jeps/518[JEP 518: JFR Cooperative Sampling]
 
 JEP 518 enhances the JDK Flight Recorder (JFR) by introducing cooperative sampling to improve stability and reduce savepoint bias. Instead of using unsafe heuristics to sample thread stacks asynchronously, the new approach suspends threads, records program counters, and processes stack traces at safe points via a thread-local queue, minimizing crashes and overhead. This redesign simplifies stack-trace generation, improves scalability, and maintains profiling accuracy, though some bias remains in intrinsic methods and native code, which will be addressed in future updates.
@@ -151,5 +155,5 @@ Some useful resources to dive deeper into the Java ecosystem, and stay up to dat
 
 * https://openjdk.org/jeps/470[JEP 470: PEM Encodings of Cryptographic Objects (Preview)]
 * https://openjdk.org/jeps/520[JEP 520: JFR Method Timing & Tracing]
-* https://openjdk.org/jeps/514[JEP 514: Ahead-of-Time Command-Line Ergonomics]
+
 * https://openjdk.org/jeps/515[JEP 515: Ahead-of-Time Method Profiling]
