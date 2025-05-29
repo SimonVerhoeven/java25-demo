@@ -79,6 +79,18 @@ This alternative object-header layout which was introduced through https://openj
 
 To enable this feature we only need to add the `-XX:+UseCompactObjectHeaders` command-line option, `XX:+UnlockExperimentalVMOptions` is no longer needed.
 
+=== https://openjdk.org/jeps/520[JEP 520: JFR Method Timing & Tracing]
+
+JEP 520 enhances the JDK Flight Recorder (JFR) with targeted method timing and tracing via bytecode instrumentation, enabling precise profiling of specific methods without source modifications.
+
+We can instrument methods, classes, or annotations (such as `java.util.HashMap::resize` or `@jakarta.ws.rs.GET`) through filters via command-line, config files, or JMX.
+
+While it is designed for low overhead, the feature explicitly warns against instrumenting large numbers of methods simultaneously, as this could degrade performance—recommending sampling. We should use method sampling instead in such cases.
+
+Two new events are introduced: `jdk.MethodTiming` (aggregate invocations/durations) and `jdk.MethodTrace` (per-call stacks).
+
+Future work may expand filtering (by interface for example), but logging method arguments/fields is excluded for security.
+
 === https://openjdk.org/jeps/521[JEP 521: Generational Shenandoah]
 
 This proposal will promote the generational mode of the Shenandoah garbage collector from experimental to a production feature. The default of single generation will remain tough.
@@ -154,6 +166,4 @@ Some useful resources to dive deeper into the Java ecosystem, and stay up to dat
 == TODO
 
 * https://openjdk.org/jeps/470[JEP 470: PEM Encodings of Cryptographic Objects (Preview)]
-* https://openjdk.org/jeps/520[JEP 520: JFR Method Timing & Tracing]
-
 * https://openjdk.org/jeps/515[JEP 515: Ahead-of-Time Method Profiling]
