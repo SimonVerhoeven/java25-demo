@@ -157,9 +157,13 @@ Issues:
 
 == Thoughts
 
-As this is a Long-Term Support release, it's important to keep in mind that now's the perfect moment to upgrade to the latest version. There are a multitude of gains to be made, especially ince a lot of organizations only upgrade to LTS versions.
+As this is a Long-Term Support release, it's important to keep in mind that now's the perfect moment to upgrade to the latest version. There are a multitude of gains to be made, especially since a lot of organizations only upgrade to LTS versions.
+
+//TODO also touch upon major features since 21
 
 == Lookahead
+
+//TODO write some thoughts on major projects to land/start in 26.
 
 == Resources
 
