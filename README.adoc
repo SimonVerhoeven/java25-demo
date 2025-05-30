@@ -66,6 +66,14 @@ This experimental feature enhances the https://dev.java/learn/jvm/jfr/[JDK Fligh
 
 This enhancement simplifies the creation of ahead-of-time (AOT) caches to speed up Java application startup by introducing a new `-XX:AOTCacheOutput` option, which consolidates the previous two-step process (recording a training run and then generating the cache) into a single command. The JVM now automatically handles the intermediate AOT configuration file as a temporary file, removing cleanup overhead, while still supporting explicit two-step workflows for advanced use cases like distributed training and cache generation. A new `JDK_AOT_VM_OPTIONS` environment variable allows separate tuning for cache creation without affecting the training run, maintaining flexibility for future AOT optimizations under Project Leyden. The change prioritizes usability for common scenarios without removing the ability to manually control the process when needed, such as when optimizing cache generation across different hardware environments.
 
+=== https://openjdk.org/jeps/515[JEP 515: Ahead-of-Time Method Profiling]
+
+This would facilitate improved application warmup times by storing method-execution profiles from training runs in the AOT cache, allowing the JIT compiler to optimize critical methods immediately at startup instead of waiting for runtime profiling.
+
+This approach leverages existing AOT workflows (introduced in https://openjdk.org/jeps/483[JEP 483]) to cache method behavior data—such as call frequencies and type information—without modifying application code. This enables faster peak performance in production while still allowing adaptive optimizations if runtime behavior diverges. For example, a stream-heavy demo saw a 19% speedup with cached profiles, as the JIT could prioritize hot methods earlier.
+
+While ideal for mixed AOT/JIT scenarios, future work may expand this with full AOT compilation, and risks remain minimal since the feature builds on the established AOT cache mechanism.
+
 === https://openjdk.org/jeps/518[JEP 518: JFR Cooperative Sampling]
 
 JEP 518 enhances the JDK Flight Recorder (JFR) by introducing cooperative sampling to improve stability and reduce savepoint bias. Instead of using unsafe heuristics to sample thread stacks asynchronously, the new approach suspends threads, records program counters, and processes stack traces at safe points via a thread-local queue, minimizing crashes and overhead. This redesign simplifies stack-trace generation, improves scalability, and maintains profiling accuracy, though some bias remains in intrinsic methods and native code, which will be addressed in future updates.
@@ -165,4 +173,3 @@ Some useful resources to dive deeper into the Java ecosystem, and stay up to dat
 == TODO
 
 * https://openjdk.org/jeps/470[JEP 470: PEM Encodings of Cryptographic Objects (Preview)]
-* https://openjdk.org/jeps/515[JEP 515: Ahead-of-Time Method Profiling]
