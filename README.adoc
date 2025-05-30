@@ -157,11 +157,13 @@ Issues:
 
 == Thoughts
 
+As this is a Long-Term Support release, it's important to keep in mind that now's the perfect moment to upgrade to the latest version. There are a multitude of gains to be made, especially ince a lot of organizations only upgrade to LTS versions.
+
 == Lookahead
 
 == Resources
 
-Some useful resources to dive deeper into the Java ecosystem, and stay up to date are:
+Some useful resources to dive deeper into the Java ecosystem and stay up to date are:
 
 * https://jdk.java.net/25/release-notes[The release notes] - The official source for all changes, including new features, bug fixes, and deprecations
 * https://javaalmanac.io/jdk/25/[The Java version almanac] - A great resource with details on distributions, and API differences between various releases
