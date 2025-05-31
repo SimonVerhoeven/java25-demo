@@ -133,6 +133,20 @@ This Java language feature allows statements before explicit constructor invocat
 
 == Security
 
+=== https://openjdk.org/jeps/470[JEP 470: PEM Encodings of Cryptographic Objects (Preview)]
+
+JEP 470 introduces a *preview API* in Java 25 for encoding/decoding cryptographic objects (keys, certificates, CRLs) to/from the PEM (Privacy-Enhanced Mail) format, simplifying a previously manual and error-prone process.
+
+The API centers on `DEREncodable`, `PEMEncoder`, and `PEMDecoder` classes, supporting standards like `PKCS#8` and `X.509`, with built-in encryption for private keys.
+
+The goals include ease of use and interoperability with tools like `OpenSSL` thus addressing a gap highlighted by developer surveys.
+
+The design avoids extending legacy APIs such as `KeyFactory` in favour of a dedicated, immutable, and thread-safe solution, though encrypted keys require password handling via `withEncryption()`/`withDecryption()`.
+
+It is possible that future iterations may expand support for non-standard PEM types via `PEMRecord`.
+
+As this is a preview feature, you'll need to enable it through `--enable-preview` to experiment with it..
+
 === https://openjdk.org/jeps/510[JEP 510: Key Derivation Function API]
 
 This enhancement introduces an API to derive additional keys from a secret key and other data through cryptographic algorithms as Key Derivation Functions (KDFs).
@@ -175,7 +189,3 @@ Some useful resources to dive deeper into the Java ecosystem and stay up to date
 * https://sdkman.io/[SDKman!] - a great tool to manage the installation of various tools and languages
 * https://inside.java/[Inside Java] - News updates by Java team members at Oracle
 * https://www.jcp.org/[Java Community Process] - the place where people can propose, discuss, and approve new features through a Java Specification Request (JSR)
-
-== TODO
-
-* https://openjdk.org/jeps/470[JEP 470: PEM Encodings of Cryptographic Objects (Preview)]
