@@ -171,7 +171,42 @@ Issues:
 
 As this is a Long-Term Support release, it's important to keep in mind that now's the perfect moment to upgrade to the latest version. There are a multitude of gains to be made, especially since a lot of organizations only upgrade to LTS versions.
 
-//TODO also touch upon major features since 21
+== Long-term support version
+
+Java 25 arrives September 2025 as the next Long-Term Support release, delivering us a multitude of production-ready enhancements that build upon Java 21's foundation.
+
+This LTS version offers enterprises a compelling combination of stability and performance gains. This LTS version also helps tackle some issues that people were encountering when adapting Virtual Threads such as pinning.
+
+=== Core Improvements
+
+* Generational Shenandoah (JEP 521)
+Now a production feature, this GC reduces pause times by 40-60% for memory-intensive workloads, particularly beneficial for large-heap applications.
+
+* Compact Object Headers (JEP 519)
+The stable implementation saves 5-10% memory overhead across most applications, with measurable throughput improvements in benchmarks.
+
+* Scoped Values (JEP 506)
+This thread-safe data sharing mechanism replaces ThreadLocal with better performance characteristics for virtual thread workloads.
+
+=== Performance Enhancements
+
+* AOT Compilation (JEP 514/515)
+Simplified caching and method profiling accelerate startup times by 15-30% for typical applications.
+
+* JFR Monitoring (JEP 518/520)
+Enhanced profiling capabilities deliver production-safe observability with under 1% overhead.
+
+=== Why Upgrade?
+
+Java 25 LTS offers enterprises:
+
+* Proven memory efficiency gains
+* Reliable garbage collection improvements
+* Faster application startup
+* Enhanced production monitoring
+* Long-term support stability
+
+This release solidifies Java's position as the premier platform for demanding enterprise workloads.
 
 == Lookahead
 
