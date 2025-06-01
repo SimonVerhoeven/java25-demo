@@ -7,8 +7,6 @@ Java 25 will be released in September 2025, as it's still early days the full li
 
 == Incubator
 
-=== Core
-
 === https://openjdk.org/jeps/508[JEP 508 Vector API - Tenth incubation]
 
 The tenth iteration API of an API for vector computations. It aims to be a way to express these in a manner that compiles reliably to optimal vector instructions on supported CPU architectures to achieve better performance than equivalent scalar computations.
@@ -103,11 +101,11 @@ Future work may expand filtering (by interface for example), but logging method 
 This proposal will promote the generational mode of the Shenandoah garbage collector from experimental to a production feature. The default of single generation will remain tough.
 
 
-=== https://bugs.openjdk.org/browse/JDK-8353484[JDK-8353484: Simplified EventConfiguration]
+=== https://bugs.openjdk.org/browse/JDK-8353484[JDK 8353484: Simplified EventConfiguration]
 
 Given that the Security Manager is no longer used in JFR a public constructor and a record class has been added for an event configuration object. This change helps avoid reflection and slightly reduces overhead.
 
-=== https://bugs.openjdk.org/browse/JDK-8353614[JDK-8353614: JFR print --exac]
+=== https://bugs.openjdk.org/browse/JDK-8353614[JDK 8353614: JFR print --exac]
 
 This new command-line flag will ensure that events are output in a human-readable format, while numbers, durations, and timestamps will be output with full precision. This flag will enhance reporting without the noise from `--json`.
 
