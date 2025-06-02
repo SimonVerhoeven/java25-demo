@@ -210,7 +210,9 @@ This release solidifies Java's position as the premier platform for demanding en
 
 == Lookahead
 
-//TODO write some thoughts on major projects to land/start in 26.
+Java 25 delivers significant improvements, and the future holds even more promise. Java 26 is expected to advance major projects like Valhalla (value objects) and Leyden (static compilation), which aim to revolutionize performance and startup times.
+
+With each release, Java evolves—delivering better efficiency, simpler syntax, and stronger security, all while prioritizing developer onboarding. Upgrading now ensures readiness to leverage these innovations as they arrive, keeping applications fast, modern, and maintainable. Keep in mind that if you are not paying for a LTS version for extra support, there's little value in not upgrading to a non LTS version when you can.
 
 == Resources
 
