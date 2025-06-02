@@ -214,6 +214,18 @@ Java 25 delivers significant improvements, and the future holds even more promis
 
 With each release, Java evolves—delivering better efficiency, simpler syntax, and stronger security, all while prioritizing developer onboarding. Upgrading now ensures readiness to leverage these innovations as they arrive, keeping applications fast, modern, and maintainable. Keep in mind that if you are not paying for a LTS version for extra support, there's little value in not upgrading to a non LTS version when you can.
 
+== Migrating
+
+While most changes in Java 25 are backward-compatible, teams should note:
+
+* Deprecations: The removal of 32-bit x86 support (JEP 503) may require updates for legacy deployments.
+
+* Preview Features: APIs like StableValue and PEM encoding require --enable-preview flags and may evolve further. If you were running 22 and experimenting with StringTemplates, that preview was removed.
+
+* Tooling: Ensure build tools (Maven/Gradle), CI pipelines, Lombok, and monitoring agents (e.g., APM tools) are tested with Java 25’s new JFR events and AOT workflows.
+
+For large codebases, incremental adoption via jdeprscan and jlink can help isolate compatibility risks.
+
 == Resources
 
 Some useful resources to dive deeper into the Java ecosystem and stay up to date are:
