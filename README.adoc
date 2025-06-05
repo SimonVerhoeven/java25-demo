@@ -23,6 +23,8 @@ The developers have confirmed that the API will remain in incubation until proje
 
 This API will bring us immutable value holders that are at most initialized once as it will help us move towards deferred immutability through `StableValue` and `StableSupplier`.
 
+One of the key benefits of stable values is in how they're handled by the JVM. Internally the stable values use the internal `@Stable` annotation which despite the values being-non final marks them as not changing after the initial updates. Thanks to this, these values benefit from the same constant-folding optimizations as final-fields.
+
 == Candidate
 
 === https://openjdk.org/jeps/198[JEP 198: Light-Weight JSON API]
