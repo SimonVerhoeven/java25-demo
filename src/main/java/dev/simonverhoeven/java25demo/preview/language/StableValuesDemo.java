@@ -1,4 +1,4 @@
-package dev.simonverhoeven.java25demo.targeted;
+package dev.simonverhoeven.java25demo.preview.language;
 
 import java.math.BigDecimal;
 import java.util.List;

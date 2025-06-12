@@ -1,4 +1,4 @@
-package dev.simonverhoeven.java25demo.targeted;
+package dev.simonverhoeven.java25demo.finalized.language;
 
 /// JEP 513 - Flexible Constructor Bodies
 public class Super extends Life{

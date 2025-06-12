@@ -1,4 +1,4 @@
-package dev.simonverhoeven.java25demo.candidate.scopedvalues;
+package dev.simonverhoeven.java25demo.finalized.core.scopedvalues;
 
 public class Greeter {
     public static void greet() {

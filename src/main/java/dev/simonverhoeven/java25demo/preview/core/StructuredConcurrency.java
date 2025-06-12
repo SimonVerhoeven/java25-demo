@@ -1,4 +1,4 @@
-package dev.simonverhoeven.java25demo.preview;
+package dev.simonverhoeven.java25demo.preview.core;
 
 import java.util.concurrent.StructuredTaskScope;
 import java.util.function.Supplier;
@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 public class StructuredConcurrency {
 
     public GarderobeSelectionInput composeGarderobeSelectionInput(String userId) {
-        try (final var scope = new StructuredTaskScope.ShutdownOnFailure()) {
+        try (final var scope = StructuredTaskScope.open()) {
             Supplier<Person> personTask =
                     scope.fork(() -> findPerson(userId));
             Supplier<Weather> weatherTask =

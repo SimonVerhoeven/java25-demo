@@ -1,4 +1,4 @@
-package dev.simonverhoeven.java25demo.targeted;
+package dev.simonverhoeven.java25demo.finalized.language;
 
 import module java.base;
 

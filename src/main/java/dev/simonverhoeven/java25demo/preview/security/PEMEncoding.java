@@ -1,4 +1,4 @@
-package dev.simonverhoeven.java25demo.preview;
+package dev.simonverhoeven.java25demo.preview.security;
 
 import java.security.KeyPair;
 import java.security.KeyPairGenerator;

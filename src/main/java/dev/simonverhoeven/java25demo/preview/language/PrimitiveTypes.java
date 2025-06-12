@@ -1,4 +1,4 @@
-package dev.simonverhoeven.java25demo.candidate;
+package dev.simonverhoeven.java25demo.preview.language;
 
 import java.security.SecureRandom;
 
