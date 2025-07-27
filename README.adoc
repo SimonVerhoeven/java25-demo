@@ -17,14 +17,6 @@ Two important changes are the increased usage of auto-vectorization on supportin
 
 The developers have confirmed that the API will remain in incubation until project Valhalla enters preview itself so that the API can leverage the expected performance and in-memory representation enhancements.
 
-== Targeted
-
-=== https://openjdk.org/jeps/502[JEP-502: Stable Values (Preview)]
-
-This API will bring us immutable value holders that are at most initialized once as it will help us move towards deferred immutability through `StableValue` and `StableSupplier`.
-
-One of the key benefits of stable values is in how they're handled by the JVM. Internally the stable values use the internal `@Stable` annotation which despite the values being-non final marks them as not changing after the initial updates. Thanks to this, these values benefit from the same constant-folding optimizations as final-fields.
-
 == Candidate
 
 === https://openjdk.org/jeps/198[JEP 198: Light-Weight JSON API]
@@ -32,6 +24,12 @@ One of the key benefits of stable values is in how they're handled by the JVM. I
 This would add a light-weight API to consume and generate JSON documents and data streams to meet basic parsing needs and to leverage Java 8/9 features. The initial goal's not to support JAXB style type-safe data bindings or offer an event mutation/replacement API.
 
 == Core
+
+=== https://openjdk.org/jeps/502[JEP-502: Stable Values (Preview)]
+
+This API will bring us immutable value holders that are at most initialized once as it will help us move towards deferred immutability through `StableValue` and `StableSupplier`.
+
+One of the key benefits of stable values is in how they're handled by the JVM. Internally the stable values use the internal `@Stable` annotation which despite the values being-non final marks them as not changing after the initial updates. Thanks to this, these values benefit from the same constant-folding optimizations as final-fields.
 
 === https://openjdk.org/jeps/506[JEP 506: Scoped values]
 
