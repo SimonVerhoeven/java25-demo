@@ -122,7 +122,30 @@ This will allow us to easily import all packages exported by a module, this faci
 
 For example: `import module java.base;`.
 
-=== https://openjdk.org/jeps/512[JEP 512: Compact Source Files and Instance Main Methods]
+If you're frequently using star imports, you can swap to module imports. Do try to avoid overusing it.
+
+
+We do need to pay attention to ambiguous reference.
+To clarify, let's use the following code:
+
+[source,java]
+----
+import module java.base;      // includes java.util.Date
+import module java.sql;       // includes java.sql.Date
+
+public class Main {
+    static void main() {
+        Date releaseDate = Date.valueOf("2025-09-16");
+        System.out.println("Java 25 released on: " + releaseDate);
+    }
+}
+----
+
+The above code will lead to an error that `Date` is an ambiguous reference given that it could refer to both `java.util.Date` and `java.sql.Date`.
+
+To resolve this we'll need to add an explicit import.
+
+=== https://openjdk.org/jeps/512[JEP 512: Compact Source Files and Instance Main methods]
 
 This enhancement will enable simplified programs by allowing them to be defined in an implicit class and an instance method `void main()`.
 
