@@ -17,12 +17,6 @@ Two important changes are the increased usage of auto-vectorization on supportin
 
 The developers have confirmed that the API will remain in incubation until project Valhalla enters preview itself so that the API can leverage the expected performance and in-memory representation enhancements.
 
-== Candidate
-
-=== https://openjdk.org/jeps/198[JEP 198: Light-Weight JSON API]
-
-This would add a light-weight API to consume and generate JSON documents and data streams to meet basic parsing needs and to leverage Java 8/9 features. The initial goal's not to support JAXB style type-safe data bindings or offer an event mutation/replacement API.
-
 == Core
 
 === https://openjdk.org/jeps/502[JEP-502: Stable Values (Preview)]
