@@ -162,7 +162,23 @@ I've really been enjoying this feature while scripting, and it will be a nice ai
 
 === https://openjdk.org/jeps/513[JEP 513: Flexible Constructor Bodies]
 
-This Java language feature allows statements before explicit constructor invocations, enabling more natural field initialization. As a preview feature in JDK 22 and 23, it introduces two constructor phases: a prologue and epilogue respectively to help developers place initialization logic more intuitively while preserving existing instantiation safeguards. This proposal has not changed compared to the second preview.
+This Java language feature allows statements before explicit constructor invocations, enabling more natural field initialization.
+
+The enhancement introduces two constructor phases: a prologue and epilogue respectively to help developers place initialization logic more intuitively while preserving existing instantiation safeguards.
+
+Argument validation, or shared setup is thus now cleanly possible in one place which enhances the readability and allows us to fail-fast.
+
+For example:
+
+[source,java]
+----
+ public Super(int meaningOfLife) {
+    if (MEANING_OF_LIFE != meaningOfLife) {
+        throw new IllegalArgumentException("Please read Hitchhiker's guide to the galaxy");
+    }
+    super(meaningOfLife);
+}
+----
 
 == Security
 
