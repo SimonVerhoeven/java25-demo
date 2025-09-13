@@ -3,7 +3,10 @@
 :toc-placement:
 :toclevels: 3
 
-Java 25 will be released on the 16th of September 2025, as it's still early days the full list of enhancements isn't known yet, but we can already take a sneak peek.
+Java 25 will be released on the 16th of September 2025, and once again it helps move the language forwards.
+An important thing to keep in mind for organizations is that this is a Long Term Support (LTS) release.
+
+The linked repository will include code samples, do keep in mind that you will need to enable the `preview` mode of your JDK for those marked as such, and the same goes for `experimental` ones.
 
 == Incubator
 
