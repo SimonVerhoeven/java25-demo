@@ -45,7 +45,7 @@ This enhancement does not aim to replace existing concurrency constructs like `E
 Scoped values are being introduced as a preview API for the fourth time.
 It will enable methods to share immutable data both within threads and with child threads, offering better efficiency and clarity than thread-local variables, especially when used with virtual threads and structured concurrency.
 
-The fourth iteration mostly remains the same, the only changes is the removal of `callWhere()` and `runWhere()` from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.html[ScopedValue] thus leaving us with a fluent API. After this change we can only use bound scopes values through the `call()` and `run()` methods from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.Carrier.html[ScopedValue.Carrier].
+The fourth iteration mostly remains the same, the only change is the removal of `callWhere()` and `runWhere()` from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.html[ScopedValue] thus leaving us with a fluent API. After this change we can only use bound scopes values through the `call()` and `run()` methods from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.Carrier.html[ScopedValue.Carrier].
 
 === https://openjdk.org/jeps/508[JEP 508 Vector API - Tenth incubation]
 
@@ -90,7 +90,7 @@ This feature is being promoted from experimental to a product feature.
 
 This alternative object-header layout which was introduced through https://openjdk.org/jeps/450[JEP 450: Compact Object Headers (experimental)] has proven its value and has been thoroughly vetted by Oracle and Amazon. Furthermore, the  SPECjbb2015 benchmark showed significant gains.
 
-To enable this feature we only need to add the `-XX:+UseCompactObjectHeaders` command-line option, `XX:+UnlockExperimentalVMOptions` is no longer needed.
+To enable this feature we only need to add the `-XX:+UseCompactObjectHeaders` command-line option, `-XX:+UnlockExperimentalVMOptions` is no longer needed.
 
 === https://openjdk.org/jeps/520[JEP 520: JFR Method Timing & Tracing]
 
@@ -114,8 +114,7 @@ Future work may expand filtering (by interface for example), but logging method 
 
 === https://openjdk.org/jeps/521[JEP 521: Generational Shenandoah]
 
-This proposal will promote the generational mode of the Shenandoah garbage collector from experimental to a production feature. The default of single generation will remain tough.
-
+This proposal will promote the generational mode of the Shenandoah garbage collector from experimental to a production feature. The single-generation mode will remain the default for now.
 
 === https://bugs.openjdk.org/browse/JDK-8353484[JDK 8353484: Simplified EventConfiguration]
 
@@ -216,7 +215,7 @@ The design avoids extending legacy APIs such as `KeyFactory` in favour of a dedi
 
 It is possible that future iterations may expand support for non-standard PEM types via `PEMRecord`.
 
-As this is a preview feature, you'll need to enable it through `--enable-preview` to experiment with it..
+As this is a preview feature, you'll need to enable it through `--enable-preview` to experiment with it.
 
 === https://openjdk.org/jeps/510[JEP 510: Key Derivation Function API]
 
@@ -232,9 +231,9 @@ As this is a Long-Term Support release, it's important to keep in mind that now'
 
 Java 25 delivers significant improvements, and the future holds even more promise. Java 26 is expected to advance major projects like Valhalla (value objects) and Leyden (static compilation), which aim to revolutionize performance and startup times.
 
-With each release, Java evolves—delivering better efficiency, simpler syntax, and stronger security, all while prioritizing developer onboarding. Upgrading now ensures readiness to leverage these innovations as they arrive, keeping applications fast, modern, and maintainable.
+With each release, Java evolves, delivering better efficiency, simpler syntax, and stronger security, all while prioritizing developer onboarding. Upgrading now ensures readiness to leverage these innovations as they arrive, keeping applications fast, modern, and maintainable.
 
-Keep in mind that if you are not paying for a LTS version for extra support, there's little value in not upgrading to a non LTS version when you can.
+Remember, the Long-Term Support (LTS) label is mostly relevant for organizations requiring vendor support over many years, be it for actual support or regulatory reasons. For other projects, the regular six-month release cycle offers us a low-risk way to continuously integrate improvements and provide feedback on the evolution of the language.
 
 == Migrating
 
