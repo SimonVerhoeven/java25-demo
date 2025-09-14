@@ -261,6 +261,7 @@ For large codebases, incremental adoption via jdeprscan and jlink can help isola
 
 Some useful resources to dive deeper into the Java ecosystem and stay up to date are:
 
+* https://github.com/SimonVerhoeven/java25-demo[GitHub repository] - this article's code
 * https://jdk.java.net/25/release-notes[The release notes] - The official source for all changes, including new features, bug fixes, and deprecations
 * https://javaalmanac.io/jdk/25/[The Java version almanac] - A great resource with details on distributions, and API differences between various releases
 * https://foojay.io/[Foojay] - A magnificent Java community offering articles, tutorials, and discussions on the latest in the Java ecosystem
