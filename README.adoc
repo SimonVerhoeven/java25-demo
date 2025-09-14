@@ -225,31 +225,6 @@ Issues:
 
 As this is a Long-Term Support release, it's important to keep in mind that now's the perfect moment to upgrade to the latest version. There are a multitude of gains to be made, especially since a lot of organizations only upgrade to LTS versions.
 
-== Long-term support version
-
-Java 25 arrives September 2025 as the next Long-Term Support release, delivering us a multitude of production-ready enhancements that build upon Java 21's foundation.
-
-This LTS version offers enterprises a compelling combination of stability and performance gains. This LTS version also helps tackle some issues that people were encountering when adapting Virtual Threads such as pinning.
-
-=== Core Improvements
-
-* Generational Shenandoah (JEP 521)
-Now a production feature, this GC reduces pause times by 40-60% for memory-intensive workloads, particularly beneficial for large-heap applications.
-
-* Compact Object Headers (JEP 519)
-The stable implementation saves 5-10% memory overhead across most applications, with measurable throughput improvements in benchmarks.
-
-* Scoped Values (JEP 506)
-This thread-safe data sharing mechanism replaces ThreadLocal with better performance characteristics for virtual thread workloads.
-
-=== Performance Enhancements
-
-* AOT Compilation (JEP 514/515)
-Simplified caching and method profiling accelerate startup times by 15-30% for typical applications.
-
-* JFR Monitoring (JEP 518/520)
-Enhanced profiling capabilities deliver production-safe observability with under 1% overhead.
-
 === Why Upgrade?
 
 Java 25 LTS offers enterprises:
@@ -266,7 +241,9 @@ This release solidifies Java's position as the premier platform for demanding en
 
 Java 25 delivers significant improvements, and the future holds even more promise. Java 26 is expected to advance major projects like Valhalla (value objects) and Leyden (static compilation), which aim to revolutionize performance and startup times.
 
-With each release, Java evolves—delivering better efficiency, simpler syntax, and stronger security, all while prioritizing developer onboarding. Upgrading now ensures readiness to leverage these innovations as they arrive, keeping applications fast, modern, and maintainable. Keep in mind that if you are not paying for a LTS version for extra support, there's little value in not upgrading to a non LTS version when you can.
+With each release, Java evolves—delivering better efficiency, simpler syntax, and stronger security, all while prioritizing developer onboarding. Upgrading now ensures readiness to leverage these innovations as they arrive, keeping applications fast, modern, and maintainable.
+
+Keep in mind that if you are not paying for a LTS version for extra support, there's little value in not upgrading to a non LTS version when you can.
 
 == Migrating
 
