@@ -8,17 +8,17 @@ An important thing to keep in mind for organizations is that this is a Long Term
 
 The linked repository will include code samples, do keep in mind that you will need to enable the `preview` mode of your JDK for those marked as such, and the same goes for `experimental` ones.
 
-== Incubator
+== Why Upgrade?
 
-=== https://openjdk.org/jeps/508[JEP 508 Vector API - Tenth incubation]
+Java 25 LTS offers enterprises:
 
-The tenth iteration of an API for vector computations. It aims to be a way to express these in a manner that compiles reliably to optimal vector instructions on supported CPU architectures to achieve better performance than equivalent scalar computations.
+* Proven memory efficiency gains
+* Reliable garbage collection improvements
+* Faster application startup
+* Enhanced production monitoring
+* Long-term support stability
 
-Compared to https://openjdk.org/jeps/489[JEP 489: Vector API (Ninth Incubator)] there are no API changes.
-
-Two important changes are the increased usage of auto-vectorization on supporting x64 CPUs and now leveraging the foreign function and memory API to link native mathematical-function libraries.
-
-The developers have confirmed that the API will remain in incubation until project Valhalla enters preview itself so that the API can leverage the expected performance and in-memory representation enhancements.
+This release solidifies Java's position as the premier platform for demanding enterprise workloads.
 
 == Core
 
@@ -27,13 +27,6 @@ The developers have confirmed that the API will remain in incubation until proje
 This preview API introduces immutable value holders that are at most initialized once as it will help us move towards deferred immutability through `StableValue` and `StableSupplier`.
 
 One of the key benefits of stable values is in how they're handled by the JVM. Internally the stable values use the internal `@Stable` annotation which despite the values being non-final marks them as not changing after the initial updates. Thanks to this, these values benefit from the same constant-folding optimizations as final-fields.
-
-=== https://openjdk.org/jeps/506[JEP 506: Scoped values]
-
-Scoped values are being introduced as a preview API for the fourth time.
-It will enable methods to share immutable data both within threads and with child threads, offering better efficiency and clarity than thread-local variables, especially when used with virtual threads and structured concurrency.
-
-The fourth iteration mostly remains the same, the only changes is the removal of `callWhere()` and `runWhere()` from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.html[ScopedValue] thus leaving us with a fluent API. After this change we can only use bound scopes values through the `call()` and `run()` methods from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.Carrier.html[ScopedValue.Carrier].
 
 === https://openjdk.org/jeps/505[JEP 505: Structured Concurrency (Fifth Preview)]
 
@@ -46,6 +39,24 @@ The main target is promoting a style of concurrent programming that eliminates c
 By reifying the task-subtask relationship at runtime, structured concurrency makes it easier for us to reason about and debug concurrent programs. It also integrates well with observability tools, such as thread dumps, which can now display the hierarchical structure of tasks and subtasks.
 
 This enhancement does not aim to replace existing concurrency constructs like `ExecutorService` or `Future`, but rather to complement them by offering a more structured and reliable alternative for managing concurrent tasks.
+
+=== https://openjdk.org/jeps/506[JEP 506: Scoped values]
+
+Scoped values are being introduced as a preview API for the fourth time.
+It will enable methods to share immutable data both within threads and with child threads, offering better efficiency and clarity than thread-local variables, especially when used with virtual threads and structured concurrency.
+
+The fourth iteration mostly remains the same, the only changes is the removal of `callWhere()` and `runWhere()` from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.html[ScopedValue] thus leaving us with a fluent API. After this change we can only use bound scopes values through the `call()` and `run()` methods from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.Carrier.html[ScopedValue.Carrier].
+
+=== https://openjdk.org/jeps/508[JEP 508 Vector API - Tenth incubation]
+
+The tenth iteration of an API for vector computations. It aims to be a way to express these in a manner that compiles reliably to optimal vector instructions on supported CPU architectures to achieve better performance than equivalent scalar computations.
+
+Compared to https://openjdk.org/jeps/489[JEP 489: Vector API (Ninth Incubator)] there are no API changes.
+
+Two important changes are the increased usage of auto-vectorization on supporting x64 CPUs and now leveraging the foreign function and memory API to link native mathematical-function libraries.
+
+The developers have confirmed that the API will remain in incubation until project Valhalla enters preview itself so that the API can leverage the expected performance and in-memory representation enhancements.
+
 
 == HotSpot
 
@@ -86,6 +97,14 @@ To enable this feature we only need to add the `-XX:+UseCompactObjectHeaders` co
 JEP 520 enhances the JDK Flight Recorder (JFR) with targeted method timing and tracing via bytecode instrumentation, enabling precise profiling of specific methods without source modifications.
 
 We can instrument methods, classes, or annotations (such as `java.util.HashMap::resize` or `@jakarta.ws.rs.GET`) through filters via command-line, config files, or JMX.
+
+[source,shellscript]
+----
+java -XX:StartFlightRecording:jdk.MethodTrace#filter=java.util.HashMap::resize,filename=java25demo.jfr ...
+$ jfr print --events jdk.MethodTrace --stack-depth 20 java25demo.jfr
+----
+
+The above snippet would trace what triggered `HashMap` resizing.
 
 While it is designed for low overhead, the feature explicitly warns against instrumenting large numbers of methods simultaneously, as this could degrade performance—recommending sampling. We should use method sampling instead in such cases.
 
@@ -205,37 +224,9 @@ This enhancement introduces an API to derive additional keys from a secret key a
 
 KDF is part of the cryptographic standard  https://docs.oasis-open.org/pkcs11/pkcs11-spec/v3.1/os/pkcs11-spec-v3.1-os.html[PKCS #11] and is one of the key elements needed to implement Hybrid Public Key Encryption (HPKE). HPKE is a post-quantum cryptographic algorithm designed to be resistant to quantum computers.
 
-== Tools
-
-== General
-
-Intro for general.
-
-Additions:
-
-Removals:
-
-Deprecations:
-
-* https://openjdk.org/jeps/8353120[JDK-8353120 Deprecate the use of `java.locale.useOldISOCodes` system property] - this property was used to support legacy codes, and is now being deprecated to simplify the codebase and reduce maintenance overhead after its removal in a future release.
-
-Issues:
-
 == Thoughts
 
 As this is a Long-Term Support release, it's important to keep in mind that now's the perfect moment to upgrade to the latest version. There are a multitude of gains to be made, especially since a lot of organizations only upgrade to LTS versions.
-
-=== Why Upgrade?
-
-Java 25 LTS offers enterprises:
-
-* Proven memory efficiency gains
-* Reliable garbage collection improvements
-* Faster application startup
-* Enhanced production monitoring
-* Long-term support stability
-
-This release solidifies Java's position as the premier platform for demanding enterprise workloads.
 
 == Lookahead
 
@@ -255,7 +246,7 @@ While most changes in Java 25 are backward-compatible, teams should note:
 
 * Tooling: Ensure build tools (Maven/Gradle), CI pipelines, Lombok, and monitoring agents (e.g., APM tools) are tested with Java 25’s new JFR events and AOT workflows.
 
-For large codebases, incremental adoption via jdeprscan and jlink can help isolate compatibility risks.
+For large codebases, incremental adoption via `jdeprscan` and `jlink` can help isolate compatibility risks.
 
 == Resources
 
