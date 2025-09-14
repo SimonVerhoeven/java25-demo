@@ -2,7 +2,7 @@
 :toc:
 :toc-placement:
 :toclevels: 3
-:icons: image
+:icons: font
 
 Java 25 will be released on the 16th of September 2025, and once again it helps move the language forwards.
 An important thing to keep in mind for organizations is that this is a Long Term Support (LTS) release.
