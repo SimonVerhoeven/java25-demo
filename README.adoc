@@ -236,10 +236,6 @@ KDF is part of the cryptographic standard  https://docs.oasis-open.org/pkcs11/pk
 
 == Thoughts
 
-As this is a Long-Term Support release, it's important to keep in mind that now's the perfect moment to upgrade to the latest version. There are a multitude of gains to be made, especially since a lot of organizations only upgrade to LTS versions.
-
-== Lookahead
-
 Java 25 delivers significant improvements, and the future holds even more promise. Java 26 is expected to advance major projects like Valhalla (value objects) and Leyden (static compilation), which aim to revolutionize performance and startup times.
 
 With each release, Java evolves, delivering better efficiency, simpler syntax, and stronger security, all while prioritizing developer onboarding. Upgrading now ensures readiness to leverage these innovations as they arrive, keeping applications fast, modern, and maintainable.
