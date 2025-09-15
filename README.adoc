@@ -242,6 +242,8 @@ With each release, Java evolves, delivering better efficiency, simpler syntax, a
 
 Remember, the Long-Term Support (LTS) label is mostly relevant for organizations requiring vendor support over many years, be it for actual support or regulatory reasons. For other projects, the regular six-month release cycle offers us a low-risk way to continuously integrate improvements and provide feedback on the evolution of the language.
 
+In this article I've touched upon the major enhancement proposals, but that certainly doesn't mean there haven't been any other improvements. For example, we can now read all remaining characters from a `Reader` into a `String` by using the new method `readAllAsString()` which as delivered through https://bugs.openjdk.org/browse/JDK-8354724[JDK-8354724] or the option to construct ZIP `FileSystem` as read-only https://bugs.openjdk.org/browse/JDK-8350880[JDK-8350880] so as always I strongly recommend checking out the release notes and experimenting yourself.
+
 == Migrating
 
 While most changes in Java 25 are backward-compatible, teams should note:
