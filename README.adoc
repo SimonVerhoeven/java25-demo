@@ -156,7 +156,6 @@ For example: `import module java.base;`.
 
 If you're frequently using star imports, you can swap to module imports. Do try to avoid overusing it.
 
-
 We do need to pay attention to ambiguous reference.
 To clarify, let's use the following code:
 
