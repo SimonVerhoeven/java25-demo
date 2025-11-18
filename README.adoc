@@ -144,7 +144,7 @@ This JEP, first introduced as JEP-455, returns without any changes. It aims to e
 [source,java]
 ----
 if (someObject instanceof int someInt) {
-    System.out.println("The int was: " + i);
+    System.out.println("The int was: " + someInt);
 }
 ----
 
@@ -266,4 +266,5 @@ Some useful resources to dive deeper into the Java ecosystem and stay up to date
 * https://sdkman.io/[SDKman!] - a great tool to manage the installation of various tools and languages
 * https://inside.java/[Inside Java] - News updates by Java team members at Oracle
 * https://www.jcp.org/[Java Community Process] - the place where people can propose, discuss, and approve new features through a Java Specification Request (JSR)
+
 * https://www.youtube.com/watch?v=9azNjz7s1Ck[How to Upgrade to Java 25 #RoadTo25]
