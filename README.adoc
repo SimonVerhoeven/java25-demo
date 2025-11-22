@@ -51,14 +51,14 @@ By reifying the task-subtask relationship at runtime, structured concurrency mak
 
 This enhancement does not aim to replace existing concurrency constructs like `ExecutorService` or `Future`, but rather to complement them by offering a more structured and reliable alternative for managing concurrent tasks.
 
-=== https://openjdk.org/jeps/506[JEP 506: Scoped values]
+=== https://openjdk.org/jeps/506[JEP 506: Scoped values (preview)]
 
 Scoped values are being introduced as a preview API for the fourth time.
 It will enable methods to share immutable data both within threads and with child threads, offering better efficiency and clarity than thread-local variables, especially when used with virtual threads and structured concurrency.
 
 The fourth iteration mostly remains the same, the only change is the removal of `callWhere()` and `runWhere()` from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.html[ScopedValue] thus leaving us with a fluent API. After this change we can only use bound scopes values through the `call()` and `run()` methods from https://cr.openjdk.org/~alanb/sv-20240517/java.base/java/lang/ScopedValue.Carrier.html[ScopedValue.Carrier].
 
-=== https://openjdk.org/jeps/508[JEP 508 Vector API - Tenth incubation]
+=== https://openjdk.org/jeps/508[JEP 508 Vector API (Tenth incubation)]
 
 The tenth iteration of an API for vector computations. It aims to be a way to express these in a manner that compiles reliably to optimal vector instructions on supported CPU architectures to achieve better performance than equivalent scalar computations.
 
@@ -99,7 +99,7 @@ JEP 518 enhances the JDK Flight Recorder (JFR) by introducing cooperative sampli
 
 This feature is being promoted from experimental to a product feature.
 
-This alternative object-header layout which was introduced through https://openjdk.org/jeps/450[JEP 450: Compact Object Headers (experimental)] has proven its value and has been thoroughly vetted by Oracle and Amazon. Furthermore, the  SPECjbb2015 benchmark showed significant gains.
+This alternative object-header layout which was introduced through https://openjdk.org/jeps/450[JEP 450: Compact Object Headers (experimental)] has proven its value and has been thoroughly vetted by Oracle and Amazon. Furthermore, the `SPECjbb2015` benchmark showed significant gains.
 
 To enable this feature we only need to add the `-XX:+UseCompactObjectHeaders` command-line option, `-XX:+UnlockExperimentalVMOptions` is no longer needed.
 
