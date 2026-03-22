@@ -1,8 +1,29 @@
 = Java 25
-:toc:
-:toc-placement:
+Simon Verhoeven <verhoeven.simon@gmail.com>
+v1.0, 2025-09-16
+:doctype: article
+:encoding: utf-8
+:lang: en
+:toc: left
 :toclevels: 3
+:toc-title: Table of Contents
+:sectanchors:
+:sectlinks:
+:sectnums:
 :icons: font
+:source-highlighter: highlight.js
+:highlightjs-theme: a11y-dark
+:stem:
+:xrefstyle: short
+:experimental:
+:description: A comprehensive overview of Java 25 LTS, covering new JEPs including AOT caching and profiling, compact object headers, Generational Shenandoah, structured concurrency, and primitive types in patterns.
+:keywords: java 25, jdk 25, lts, aot caching, compact object headers, structured concurrency, primitive patterns, jep, openjdk
+:copyright: Copyright (c) 2025 Simon Verhoeven
+:license: MIT License
+:license-url: https://opensource.org/licenses/MIT
+:java-version: 25
+:release-date: 2025-09-16
+:release-type: Long-Term Support (LTS)
 
 Java 25 will be released on the 16th of September 2025, and once again it helps move the language forwards.
 An important thing to keep in mind for organizations is that this is a Long Term Support (LTS) release.
@@ -203,6 +224,8 @@ For example:
 
 [source,java]
 ----
+ private static final int MEANING_OF_LIFE = 42;
+
  public Super(int meaningOfLife) {
     if (MEANING_OF_LIFE != meaningOfLife) {
         throw new IllegalArgumentException("Please read Hitchhiker's guide to the galaxy");
@@ -249,7 +272,7 @@ While most changes in Java 25 are backward-compatible, teams should note:
 
 * Deprecations: The removal of 32-bit x86 support (JEP 503) may require updates for legacy deployments.
 
-* Preview Features: APIs like StableValue and PEM encoding require --enable-preview flags and may evolve further. If you were running 22 and experimenting with StringTemplates, that preview was removed.
+* Preview Features: APIs like StableValue and PEM encoding require --enable-preview flags and may evolve further. If you were running 22 and experimenting with StringTemplates, that preview was removed in Java23.
 
 * Tooling: Ensure build tools (Maven/Gradle), CI pipelines, Lombok, and monitoring agents (e.g., APM tools) are tested with Java 25’s new JFR events and AOT workflows.
 
@@ -266,5 +289,10 @@ Some useful resources to dive deeper into the Java ecosystem and stay up to date
 * https://sdkman.io/[SDKman!] - a great tool to manage the installation of various tools and languages
 * https://inside.java/[Inside Java] - News updates by Java team members at Oracle
 * https://www.jcp.org/[Java Community Process] - the place where people can propose, discuss, and approve new features through a Java Specification Request (JSR)
-
 * https://www.youtube.com/watch?v=9azNjz7s1Ck[How to Upgrade to Java 25 #RoadTo25]
+
+[width="100%", cols="1", frame=top, grid=none]
+|===
+^| © 2026 Simon Verhoeven. Licensed under the MIT License. +
+_Last updated: March 22, 2026_
+|===
